@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    crystals =["./Users/alanfountain/Desktop/unit-4-game/unit-4-game1/assets/images/crystalgreen.jpeg", "./Users/alanfountain/Desktop/unit-4-game/unit-4-game1/assets/images/crystalpink.jpeg", "./Users/alanfountain/Desktop/unit-4-game/unit-4-game1/assets/images/crystalpurple.jpeg", "./Users/alanfountain/Desktop/unit-4-game/unit-4-game1/assets/images/crystalblue.jpeg"]
+    crystals =["./Users./alanfountain./Desktop./unit-4-game./unit-4-game1./assets./images./crystalgreen.jpeg", "./Users./alanfountain./Desktop./unit-4-game./unit-4-game1./assets./images/crystalpink.jpeg", "./Users./alanfountain./Desktop./unit-4-game./unit-4-game1./assets./images/crystalpurple.jpeg", "./Users./alanfountain./Desktop./unit-4-game./unit-4-game1./assets./images./crystalblue.jpeg"]
     
         var counter = 0;
         var wins = 0;
