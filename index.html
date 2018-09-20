@@ -1,53 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crystal Game</title>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-      <link rel="stylesheet" type="text/css" href="./Users./alanfountain./Desktop./unit-4-game./unit-4-game1./assets./.css./reset.css">
-      <link rel="stylesheet" type="text/css" href="./Users/.alanfountain./Desktop./.unit-4-game./unit-4-game1./assets./css./style.css">
-      <link href="https://fonts.googleapis.com/css?family=Jomhuria" rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>Crystal Game</title>
+<style>
+    * {
+	box-sizing: border-box;
+}
+
+body {
+	background: black;
+}
+
+.container {
+	width: 1300px;
+}
+
+#heading {
+	background: black;
+	color: white;
+	border: 1px solid gray;
+	width: 100%;
+	margin: 0;
+	padding: 40px;
+	text-align: center;
+	font-family: 'Satisfy', cursive;
+	font-size: 60px;
+
+}
+
+#gameRules {
+	background: greenyellow;
+	color: red;
+	width: 100%;
+	margin: 0;
+	padding: 50px;
+	text-align: center;
+	font-family: 'Jomhuria', cursive;
+	font-size: 25px;
+
+}
+
+#randomNum {
+	background: black;
+	color: white;
+	width: 33%;
+	margin-top: 0;
+	padding: 0, 20px, 20px, 20px;
+	text-align: center;
+	font-family: 'Satisfy', cursive;
+	font-size: 25px;
+	float: left;
+	height: 90px;
+
+
+}
+
+#winsLosses {
+	background: black;
+	color: white;
+	width: 33%;
+	margin-top: 0;
+	padding: 0, 20px, 20px, 20px;
+	text-align: center;
+	font-family: 'Satisfy', cursive;
+	font-size: 25px;
+	float: left;
+	line-height: 20px;
+	height: 90px;
+
+}
+
+#totalScore {
+	background: black;
+	color: white;
+	width: 33%;
+	margin-top: 0;
+	padding: 0, 20px, 20px, 20px;
+	text-align: center;
+	font-family: 'Satisfy', cursive;
+	font-size: 25px;
+	float: left;
+	height: 90px;
+	
+}
+
+.crystals {
+	background: gray;
+	color: white;
+	width: 100%;
+	margin: 0;
+	text-align: center;
+	float: left;
+	padding-top: 50px;
+	position: fixed;
+	bottom: 0;
+	clear: both;
+}
+
+img {
+	height: 125px;
+	width: 175px;
+	margin: 0 auto;
+	padding-right: 50px;
+}
+
+
+
+	
+
+
+</style>
+<link href="https://fonts.googleapis.com/css?family=Jomhuria" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+
 </head>
 <body>
-    	<div class="container">
-                <header>
-                    <h1 id="heading"> Crystal Collector! </h1>
-                </header>
-        
-                <p id="gameRules">
-                    You will be given a random number at the start of the game.
-                    <br>
-                    There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
-                    <br>
-                    You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.
-                    <br>
-                    The value of each crystal is hidden from you until you click on it.
-                    <br>
-                    Each time when the game starts, the game will change the values of each crystal.
-                </p>
-        
-                <div id="winsLosses">
-                    <h3><span id="message"></span></h3>
-                    <h3> Wins: <span id="win"></span></h3> 
-                    <h3> Losses: <span id="loss"></span></h3>  
-                </div>
-        
-                <div id="randomNum"> Random number: <span class="value"></span></div>
-        
-                <div class="crystals"></div>
-        
-                <div id="totalScore"> 
-                    <h3 id="score"> Your total score is: <span id="yourScore">0</span></h3>
-                </div>
-        
-            </div>
-        
-            <script src="./Users./alanfountain./Desktop./unit-4-game./unit-4-game1./assets./javascript./game.js"></script>
+	<div class="container">
+		<header>
+			<h1 id="heading"> Crystal Collector! </h1>
+		</header>
+
+		<p id="gameRules">
+			You will be given a random number at the start of the game.
+			<br>
+			There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
+			<br>
+			You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.
+			<br>
+			The value of each crystal is hidden from you until you click on it.
+			<br>
+			Each time when the game starts, the game will change the values of each crystal.
+		</p>
+
+		<div id="winsLosses">
+			<h3><span id="message"></span></h3>
+			<h3> Wins: <span id="win"></span></h3> 
+			<h3> Losses: <span id="loss"></span></h3>  
+		</div>
+
+		<div id="randomNum"> Random number: <span class="value"></span></div>
+
+		<div class="crystals"></div>
+
+		<div id="totalScore"> 
+			<h3 id="score"> Your total score is: <span id="yourScore">0</span></h3>
+		</div>
+
+	</div>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+crystals =["/Users/alanfountain/Desktop/unit-4-game/unit-4-game1/crystalgreen.jpeg", "/Users/alanfountain/Desktop/unit-4-game/unit-4-game1/crystalpink.jpeg", "/Users/alanfountain/Desktop/unit-4-game/unit-4-game1/crystalpurple.jpeg", "/Users/alanfountain/Desktop/unit-4-game/unit-4-game1/crystalblue.jpeg"]
+
+	var counter = 0;
+	var wins = 0;
+	var losses = 0;
+	$("#win").text(wins);
+	$("#loss").text(losses);
+
+
+	newCrystals();
+	newGame();
+
+	function newCrystals () {
+		var numbers = []
+			while(numbers.length < 4){
+			  var randomnumber = Math.floor(Math.random()*12)
+			  var found = false;
+			  for (var i=0; i< numbers.length; i++){
+				if (numbers[i] == randomnumber){
+					found = true; break
+				}
+			  }
+			  if(!found)numbers[numbers.length]=randomnumber;
+			}
+		console.log(numbers);		
+
+		for (i = 0; i < numbers.length; i++) {
+			var imageCrystal = $("<img>");
+			imageCrystal.attr("data-num", numbers[i]);
+			imageCrystal.attr("src", crystals[i]);
+			imageCrystal.attr("alt", "crystals");
+			imageCrystal.addClass("crystalImage")
+			$(".crystals").append(imageCrystal);
+		}
+	}
+
+	function newGame() {
+
+		counter = 0;
+		$("#yourScore").text(counter);
+
+		function randomIntFromInterval(min,max){
+		   	return Math.floor(Math.random()*(max-min+1)+min);
+			}
+
+		var numberToGuess = randomIntFromInterval(19,120);
+
+		$(".value").text(numberToGuess);
+
+
+		$(".crystalImage").on('click', function(){
+		    counter = counter + parseInt($(this).data('num'));
+		   
+		    $("#yourScore").text(counter);
+
+		    if (counter == numberToGuess){
+		      $("#message").text("You won!");
+		      wins ++;
+		      $("#win").text(wins);
+		      console.log(wins)
+		      $(".crystals").empty();
+		      newCrystals();
+		      newGame();
+		        
+		    } else if ( counter > numberToGuess){
+		        $("#message").text("You lost")
+		        losses ++;
+		        $("#loss").text(losses);
+		        console.log(losses)
+		        $(".crystals").empty();
+		        newCrystals();
+		        newGame();
+		    }
+		});
+	}
+
+});
+</script>
 </body>
 </html>
