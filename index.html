@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Game</title>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+      <link rel="stylesheet" type="text/css" href="/Users/alanfountain/Desktop/unit-4-game/unit-4-game1/assets/css/reset.css">
+      <link rel="stylesheet" type="text/css" href="/Users/alanfountain/Desktop/unit-4-game/unit-4-game1/assets/css/style.css">
+      <link href="https://fonts.googleapis.com/css?family=Jomhuria" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+</head>
+<body>
+    	<div class="container">
+                <header>
+                    <h1 id="heading"> Crystal Collector! </h1>
+                </header>
+        
+                <p id="gameRules">
+                    You will be given a random number at the start of the game.
+                    <br>
+                    There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
+                    <br>
+                    You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.
+                    <br>
+                    The value of each crystal is hidden from you until you click on it.
+                    <br>
+                    Each time when the game starts, the game will change the values of each crystal.
+                </p>
+        
+                <div id="winsLosses">
+                    <h3><span id="message"></span></h3>
+                    <h3> Wins: <span id="win"></span></h3> 
+                    <h3> Losses: <span id="loss"></span></h3>  
+                </div>
+        
+                <div id="randomNum"> Random number: <span class="value"></span></div>
+        
+                <div class="crystals"></div>
+        
+                <div id="totalScore"> 
+                    <h3 id="score"> Your total score is: <span id="yourScore">0</span></h3>
+                </div>
+        
+            </div>
+        
+            <script src="/Users/alanfountain/Desktop/unit-4-game/unit-4-game1/assets/javascript/game.js"></script>
+</body>
+</html>
