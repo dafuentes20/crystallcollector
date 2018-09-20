@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    crystals =["./crystalgreen.jpeg", "./Users./alanfountain./Desktop./unit-4-game./unit-4-game1./assets./images/crystalpink.jpeg", "./Users./alanfountain./Desktop./unit-4-game./unit-4-game1./assets./images/crystalpurple.jpeg", "./Users./alanfountain./Desktop./unit-4-game./unit-4-game1./assets./images./crystalblue.jpeg"]
+    crystals =["/Users/alanfountain/Desktop/unit-4-game/unit-4-game1/assets/images/crystalgreen.jpeg", "/Users/alanfountain/Desktop/unit-4-game/unit-4-game1/assets/images/crystalpink.jpeg", "/Users/alanfountain/Desktop/unit-4-game/unit-4-game1/assets/images/crystalpurple.jpeg", "/Users/alanfountain/Desktop/unit-4-game/unit-4-game1/assets/images/crystalblue.jpeg"]
     
         var counter = 0;
         var wins = 0;
@@ -15,7 +15,7 @@ $(document).ready(function() {
         function newCrystals () {
             var numbers = []
                 while(numbers.length < 4){
-                  var randomnumber = Math.floor(Math.random()*12)
+                  var randomnumber = Math.ceil(Math.random()*12)
                   var found = false;
                   for (var i=0; i< numbers.length; i++){
                     if (numbers[i] == randomnumber){
